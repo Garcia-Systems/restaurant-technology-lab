@@ -1,0 +1,12 @@
+{
+  "reservation_show_rate": 0.90,
+  "event_rate": 0.12,
+  "weather_rates": {
+    "clear": 0.00,
+    "cloudy": -0.02,
+    "rain": -0.10,
+    "storms": -0.18,
+    "hot": -0.04
+  },
+  "range_rate": 0.10
+}
