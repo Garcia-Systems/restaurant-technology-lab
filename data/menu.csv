@@ -1,0 +1,21 @@
+item_id,item_name,category,selling_price,ingredient_cost
+oyster-fritters,Chesapeake Oyster Fritters,Appetizers,13.00,4.20
+ham-biscuits,Country Ham Biscuits,Appetizers,11.00,2.80
+smoked-trout-dip,Smoked Trout Dip,Appetizers,14.00,4.60
+peanut-soup,Virginia Peanut Soup,Soups and Salads,9.00,2.10
+garden-salad,Tidewater Garden Salad,Soups and Salads,12.00,3.30
+chicken-salad,Roasted Chicken Salad,Soups and Salads,17.00,5.40
+river-burger,River Burger,Sandwiches,16.00,7.00
+fried-oyster-po-boy,Fried Oyster Po' Boy,Sandwiches,18.00,6.80
+pulled-pork-sandwich,Applewood Pulled Pork Sandwich,Sandwiches,15.00,5.10
+crab-cake-dinner,Crab Cake Dinner,Seafood,26.00,9.00
+rockfish,Rosemary Rockfish,Seafood,28.00,9.80
+shrimp-grits,Tidewater Shrimp and Grits,Seafood,24.00,8.40
+fried-chicken,Buttermilk Fried Chicken,Entrees,21.00,6.70
+pork-chop,Cider-Brined Pork Chop,Entrees,25.00,7.80
+beef-tenderloin,Virginia Beef Tenderloin,Entrees,34.00,12.00
+vegetable-pot-pie,Seasonal Vegetable Pot Pie,Entrees,19.00,4.90
+chess-pie,Brown Butter Chess Pie,Desserts,9.00,2.20
+peach-cobbler,Virginia Peach Cobbler,Desserts,10.00,2.80
+sweet-tea,House Sweet Tea,Beverages,4.00,0.55
+ginger-spritz,Blue Ridge Ginger Spritz,Beverages,8.00,1.60
