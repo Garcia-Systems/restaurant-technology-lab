@@ -7,6 +7,11 @@ from .menu_summary import format_menu_analysis
 from .model import DataSource, OperatingPeriod, Restaurant, RestaurantValidationError
 from .profitability import analyze_menu, rank_by_contribution, simulate_price
 from .summary import format_operational_summary
+from .demand import (DemandForecast, DemandObservation, ForecastRules,
+                     ForecastScenario, ReservationSnapshot, SUPPORTED_WEATHER)
+from .demand_loader import load_demand_history, load_forecast_rules, load_reservations
+from .demand_summary import format_demand_forecast, format_scenario_comparison
+from .forecasting import forecast_demand, override_scenario
 
 __all__ = [
     "DataSource",
@@ -25,4 +30,17 @@ __all__ = [
     "load_sales",
     "rank_by_contribution",
     "simulate_price",
+    "DemandForecast",
+    "DemandObservation",
+    "ForecastRules",
+    "ForecastScenario",
+    "ReservationSnapshot",
+    "SUPPORTED_WEATHER",
+    "forecast_demand",
+    "format_demand_forecast",
+    "format_scenario_comparison",
+    "load_demand_history",
+    "load_forecast_rules",
+    "load_reservations",
+    "override_scenario",
 ]

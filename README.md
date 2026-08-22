@@ -17,26 +17,27 @@ All restaurants, operating details, and business data in this repository are **f
 
 ## Current executable slice
 
-Chapters 0–2 are implemented. The current slice:
+Chapters 0–3 are implemented. The current slice:
 
 - loads one readable JSON configuration for James River Kitchen;
 - validates capacity, service periods, categories, channels, and required data sources;
 - models the operating flow and the software/data flow; and
 - prints a presentation-ready operational briefing;
 - analyzes fictional July 2026 menu sales with exact decimal contribution calculations; and
-- simulates a menu price without changing source data.
+- simulates a menu price without changing source data; and
+- forecasts covers and revenue with visible weekday, reservation, event, and weather adjustments and a reasonable range.
 
-It intentionally contains no forecasts, automated management decisions, external integrations, payments, authentication, machine learning, or web dashboard.
+It intentionally contains no automated management decisions, external integrations, payments, authentication, machine learning, or web dashboard.
 
 ## Implemented
 
 - Introduction
 - Restaurant system model
 - Menu profitability analysis
+- Demand forecasting
 
 ## Planned
 
-- Demand forecasting
 - Labor planning
 - Inventory and food waste
 - Customer feedback
@@ -68,6 +69,18 @@ data/menu.csv + data/menu_sales_july_2026.csv
       Decimal profitability analysis
                     ↓
       examples/menu_profitability.py
+```
+
+Chapter 3 extends the same validated, presentation-first system:
+
+```text
+demand history + reservation snapshots + visible rules
+                         ↓
+              validated immutable models
+                         ↓
+        deterministic forecast + explanation
+                         ↓
+           examples/demand_forecast.py
 ```
 
 The restaurant itself has a parallel operational flow:
@@ -110,13 +123,33 @@ Simulate a $17.50 River Burger price at unchanged sales volume (the source CSV r
 python examples/menu_profitability.py --item river-burger --price 17.50
 ```
 
+## Run the demand forecast
+
+Run the default Friday, August 28, 2026 scenario:
+
+```bash
+python examples/demand_forecast.py
+```
+
+Compare the default with a local-event scenario:
+
+```bash
+python examples/demand_forecast.py --event
+```
+
+Compare the default with rain and 190 booked covers:
+
+```bash
+python examples/demand_forecast.py --weather rain --reservations 190
+```
+
 ## Run the tests
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-The tests use only the Python standard library and cover both the system foundation and menu loading, validation, Decimal calculations, classification, ranking, simulations, and executable output.
+The tests use only the Python standard library and cover the system foundation, menu profitability, demand/reservation loading, validation, deterministic adjustments, ranges, revenue forecasts, immutable scenarios, and executable output.
 
 ## Repository map
 
@@ -129,4 +162,4 @@ tests/          Behavior-focused standard-library tests
 presentation/   Concise presenter support (see its README)
 ```
 
-Start with [Chapter 0](chapters/00-introduction.md), continue through [Chapter 1](chapters/01-restaurant-system.md), and run the first business-analysis lab in [Chapter 2](chapters/02-menu-profitability.md).
+Start with [Chapter 0](chapters/00-introduction.md), continue through [Chapter 1](chapters/01-restaurant-system.md) and [Chapter 2](chapters/02-menu-profitability.md), then forecast a busy night in [Chapter 3](chapters/03-demand-forecasting.md).
