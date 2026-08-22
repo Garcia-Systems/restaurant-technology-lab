@@ -1,0 +1,23 @@
+{
+  "name": "James River Kitchen",
+  "location": "Williamsburg, Virginia",
+  "concept": "Independent neighborhood restaurant serving seasonal Virginia comfort food",
+  "fictional": true,
+  "capacity": 120,
+  "operating_periods": [
+    {"days": ["Monday", "Tuesday", "Wednesday", "Thursday"], "service": "Dinner", "opens": "16:30", "closes": "21:30"},
+    {"days": ["Friday"], "service": "Dinner", "opens": "16:30", "closes": "22:30"},
+    {"days": ["Saturday"], "service": "Lunch", "opens": "11:30", "closes": "15:00"},
+    {"days": ["Saturday"], "service": "Dinner", "opens": "16:30", "closes": "22:30"},
+    {"days": ["Sunday"], "service": "Brunch", "opens": "10:00", "closes": "15:00"}
+  ],
+  "menu_categories": ["Starters", "Mains", "Sides", "Desserts", "Beverages"],
+  "sales_channels": ["Dine-in", "Takeout", "Online ordering"],
+  "data_sources": [
+    {"id": "pos", "name": "POS", "provides": "orders, payments, and item sales"},
+    {"id": "reservations", "name": "Reservations", "provides": "bookings, party sizes, and arrival times"},
+    {"id": "scheduling", "name": "Labor schedule", "provides": "planned shifts and roles"},
+    {"id": "inventory", "name": "Inventory", "provides": "ingredients, purchases, and stock counts"},
+    {"id": "reviews", "name": "Customer reviews", "provides": "ratings and guest comments"}
+  ]
+}
