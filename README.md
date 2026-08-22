@@ -17,25 +17,30 @@ All restaurants, operating details, and business data in this repository are **f
 
 ## Current executable slice
 
-Chapters 1–2 (numbered `00`–`01` in the repository) are implemented. The current slice:
+Chapters 0–2 are implemented. The current slice:
 
 - loads one readable JSON configuration for James River Kitchen;
 - validates capacity, service periods, categories, channels, and required data sources;
 - models the operating flow and the software/data flow; and
-- prints a presentation-ready operational briefing.
+- prints a presentation-ready operational briefing;
+- analyzes fictional July 2026 menu sales with exact decimal contribution calculations; and
+- simulates a menu price without changing source data.
 
-It intentionally contains no analytics, forecasts, recommendations, external integrations, payments, authentication, machine learning, or web dashboard yet.
+It intentionally contains no forecasts, automated management decisions, external integrations, payments, authentication, machine learning, or web dashboard.
 
-## Version 1 roadmap
+## Implemented
 
-1. **Introduction — Meet James River Kitchen** — implemented
-2. **The Restaurant as a System** — implemented
-3. **What Actually Makes Money? — Menu Profitability** — planned
-4. **Predicting a Busy Night — Demand Forecasting** — planned
-5. **Labor vs. Demand — Staffing** — planned
-6. **Inventory and Food Waste** — planned
-7. **What Customers Are Telling You — Customer Feedback** — planned
-8. **Friday Night Capstone** — planned
+- Introduction
+- Restaurant system model
+- Menu profitability analysis
+
+## Planned
+
+- Demand forecasting
+- Labor planning
+- Inventory and food waste
+- Customer feedback
+- Friday Night Capstone
 
 Planned chapters name future business questions; they are not placeholder features.
 
@@ -50,7 +55,19 @@ data/james_river_kitchen.json
              ↓
  presentation-friendly summary
              ↓
- examples/restaurant_system.py
+examples/restaurant_system.py
+```
+
+Chapter 2 adds a parallel, deliberately small path:
+
+```text
+data/menu.csv + data/menu_sales_july_2026.csv
+                    ↓
+         CSV loading + validation
+                    ↓
+      Decimal profitability analysis
+                    ↓
+      examples/menu_profitability.py
 ```
 
 The restaurant itself has a parallel operational flow:
@@ -81,13 +98,25 @@ python examples/restaurant_system.py
 
 The example locates `src/` and `data/` relative to its own file, so it needs no installation step.
 
+## Run the menu profitability analysis
+
+```bash
+python examples/menu_profitability.py
+```
+
+Simulate a $17.50 River Burger price at unchanged sales volume (the source CSV remains unchanged):
+
+```bash
+python examples/menu_profitability.py --item river-burger --price 17.50
+```
+
 ## Run the tests
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-The tests use only the Python standard library and cover loading, required systems, invalid inputs, readable output, and execution from a clean repository root.
+The tests use only the Python standard library and cover both the system foundation and menu loading, validation, Decimal calculations, classification, ranking, simulations, and executable output.
 
 ## Repository map
 
@@ -97,7 +126,7 @@ data/           Fictional, editable restaurant configuration
 examples/       Executable presentation entry points
 src/            Validated restaurant model and summary behavior
 tests/          Behavior-focused standard-library tests
-presentation/   Future presentation assets (see its README)
+presentation/   Concise presenter support (see its README)
 ```
 
-Start with [Chapter 0](chapters/00-introduction.md), then use [Chapter 1](chapters/01-restaurant-system.md) for the first guided exercise.
+Start with [Chapter 0](chapters/00-introduction.md), continue through [Chapter 1](chapters/01-restaurant-system.md), and run the first business-analysis lab in [Chapter 2](chapters/02-menu-profitability.md).
