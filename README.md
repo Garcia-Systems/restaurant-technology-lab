@@ -17,7 +17,7 @@ All restaurants, operating details, and business data in this repository are **f
 
 ## Current executable slice
 
-Chapters 0–3 are implemented. The current slice:
+Chapters 0–4 are implemented. The current slice:
 
 - loads one readable JSON configuration for James River Kitchen;
 - validates capacity, service periods, categories, channels, and required data sources;
@@ -25,7 +25,8 @@ Chapters 0–3 are implemented. The current slice:
 - prints a presentation-ready operational briefing;
 - analyzes fictional July 2026 menu sales with exact decimal contribution calculations; and
 - simulates a menu price without changing source data; and
-- forecasts covers and revenue with visible weekday, reservation, event, and weather adjustments and a reasonable range.
+- forecasts covers and revenue with visible weekday, reservation, event, and weather adjustments and a reasonable range; and
+- compares a fictional Friday schedule with forecast-driven role ranges and transparent labor cost.
 
 It intentionally contains no automated management decisions, external integrations, payments, authentication, machine learning, or web dashboard.
 
@@ -35,10 +36,10 @@ It intentionally contains no automated management decisions, external integratio
 - Restaurant system model
 - Menu profitability analysis
 - Demand forecasting
+- Labor planning
 
 ## Planned
 
-- Labor planning
 - Inventory and food waste
 - Customer feedback
 - Friday Night Capstone
@@ -81,6 +82,18 @@ demand history + reservation snapshots + visible rules
         deterministic forecast + explanation
                          ↓
            examples/demand_forecast.py
+```
+
+Chapter 4 consumes that forecast rather than rebuilding it:
+
+```text
+Chapter 3 DemandForecast + schedule + visible role assumptions
+                              ↓
+                 labor hours and Decimal cost
+                              ↓
+                  role ranges and signals
+                              ↓
+                examples/labor_planning.py
 ```
 
 The restaurant itself has a parallel operational flow:
@@ -143,13 +156,35 @@ Compare the default with rain and 190 booked covers:
 python examples/demand_forecast.py --weather rain --reservations 190
 ```
 
+## Run the labor planning analysis
+
+Default fixed-schedule comparison:
+
+```bash
+python examples/labor_planning.py
+```
+
+Lower-demand comparison:
+
+```bash
+python examples/labor_planning.py --weather rain --reservations 100
+```
+
+Higher-demand event comparison:
+
+```bash
+python examples/labor_planning.py --event --reservations 210
+```
+
+These are fictional James River Kitchen assumptions, not industry standards. The result is a planning signal—not automatic scheduling, payroll, compliance, or a personnel recommendation.
+
 ## Run the tests
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-The tests use only the Python standard library and cover the system foundation, menu profitability, demand/reservation loading, validation, deterministic adjustments, ranges, revenue forecasts, immutable scenarios, and executable output.
+The tests use only the Python standard library and cover the system foundation, menu profitability, demand forecasting, schedule and assumption loading, shift hours, Decimal labor cost, staffing ranges, immutable scenarios, validation, and executable output.
 
 ## Repository map
 
@@ -162,4 +197,4 @@ tests/          Behavior-focused standard-library tests
 presentation/   Concise presenter support (see its README)
 ```
 
-Start with [Chapter 0](chapters/00-introduction.md), continue through [Chapter 1](chapters/01-restaurant-system.md) and [Chapter 2](chapters/02-menu-profitability.md), then forecast a busy night in [Chapter 3](chapters/03-demand-forecasting.md).
+Start with [Chapter 0](chapters/00-introduction.md), continue through [Chapter 1](chapters/01-restaurant-system.md) and [Chapter 2](chapters/02-menu-profitability.md), forecast a busy night in [Chapter 3](chapters/03-demand-forecasting.md), then connect that forecast to labor in [Chapter 4](chapters/04-labor-planning.md).

@@ -12,6 +12,11 @@ from .demand import (DemandForecast, DemandObservation, ForecastRules,
 from .demand_loader import load_demand_history, load_forecast_rules, load_reservations
 from .demand_summary import format_demand_forecast, format_scenario_comparison
 from .forecasting import forecast_demand, override_scenario
+from .labor import (LABOR_ROLES, RolePlanningAssumption, RoleStaffingAlignment,
+                    ScheduledShift, StaffingAnalysis)
+from .labor_loader import load_labor_assumptions, load_schedule
+from .labor_planning import analyze_staffing
+from .labor_summary import format_staffing_analysis, format_staffing_comparison
 
 __all__ = [
     "DataSource",
@@ -43,4 +48,14 @@ __all__ = [
     "load_forecast_rules",
     "load_reservations",
     "override_scenario",
+    "LABOR_ROLES",
+    "RolePlanningAssumption",
+    "RoleStaffingAlignment",
+    "ScheduledShift",
+    "StaffingAnalysis",
+    "analyze_staffing",
+    "format_staffing_analysis",
+    "format_staffing_comparison",
+    "load_labor_assumptions",
+    "load_schedule",
 ]
