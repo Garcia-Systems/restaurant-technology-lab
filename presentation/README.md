@@ -2,6 +2,8 @@
 
 This directory holds concise presenter support for executable chapters. No separate slide deck is needed; the terminal output and chapter prompts are the presentation aids.
 
+The workshop finale is documented in [the Chapter 7 presenter guide](chapter-07-presenter-guide.md), including its scenario comparison, causal caveat, and operator-discovery close.
+
 ## Chapter 2 live-demo sequence
 
 1. Ask the audience which item they think matters most.

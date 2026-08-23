@@ -24,6 +24,12 @@ from .inventory_loader import load_ingredients, load_inventory, load_recipes, lo
 from .inventory_planning import (analyze_inventory, calculate_menu_mix, expected_ingredient_demand,
                                  historical_ingredient_usage, simulate_ingredient_cost)
 from .inventory_summary import format_inventory_analysis, format_inventory_comparison
+from .feedback import (ClassifiedReview, FeedbackAnalysis, Review, TopicSignal,
+                       TopicSummary, TopicTrend)
+from .feedback_analysis import TOPIC_RULES, analyze_feedback, classify_review, drill_down
+from .feedback_loader import load_reviews
+from .capstone import CapstoneBriefing, PRIORITIES, ReadinessSignal, build_capstone, generate_signals
+from .capstone_summary import format_capstone
 
 __all__ = [
     "DataSource",
@@ -71,4 +77,8 @@ __all__ = [
     "analyze_inventory", "calculate_menu_mix", "expected_ingredient_demand",
     "historical_ingredient_usage", "simulate_ingredient_cost", "format_inventory_analysis",
     "format_inventory_comparison",
+    "ClassifiedReview", "FeedbackAnalysis", "Review", "TopicSignal", "TopicSummary",
+    "TopicTrend", "TOPIC_RULES", "analyze_feedback", "classify_review", "drill_down",
+    "load_reviews", "CapstoneBriefing", "PRIORITIES", "ReadinessSignal", "build_capstone",
+    "generate_signals", "format_capstone",
 ]
