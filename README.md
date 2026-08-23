@@ -15,9 +15,9 @@ The lab complements POS, reservation, scheduling, inventory, and review software
 
 All restaurants, operating details, and business data in this repository are **fictional**. James River Kitchen is not a real restaurant.
 
-## Current executable slice
+## Version 1 — complete
 
-Chapters 0–6 are implemented. The current slice:
+Chapters 0–7 are implemented. The completed Version 1:
 
 - loads one readable JSON configuration for James River Kitchen;
 - validates capacity, service periods, categories, channels, and required data sources;
@@ -28,7 +28,8 @@ Chapters 0–6 are implemented. The current slice:
 - forecasts covers and revenue with visible weekday, reservation, event, and weather adjustments and a reasonable range; and
 - compares a fictional Friday schedule with forecast-driven role ranges and transparent labor cost; and
 - connects POS sales, simplified recipes, a physical count, the Chapter 3 forecast, and waste records to ingredient planning signals and financial impact; and
-- turns fictional guest feedback into inspectable topic, polarity, and time-window signals with deterministic phrase rules.
+- turns fictional guest feedback into inspectable topic, polarity, and time-window signals with deterministic phrase rules; and
+- orchestrates those analyses into one traceable Friday briefing with categorical cross-functional signals.
 
 It intentionally contains no automated management decisions, external integrations, payments, authentication, machine learning, or web dashboard.
 
@@ -41,73 +42,29 @@ It intentionally contains no automated management decisions, external integratio
 - Labor planning
 - Inventory and food waste
 - Customer feedback
-
-## Planned
 - Friday Night Capstone
 
-Planned chapters name future business questions; they are not placeholder features.
-
-## Architecture at a glance
+## Completed architecture at a glance
 
 ```text
-data/james_river_kitchen.json
-             ↓
-       loader + validation
-             ↓
- normalized Restaurant model
-             ↓
- presentation-friendly summary
-             ↓
-examples/restaurant_system.py
+ Restaurant config        Menu + sales       Demand + reservations       Reviews
+        |                       |                       |                    |
+ validated Restaurant     analyze_menu()          forecast_demand()    analyze_feedback()
+                                |                       |
+                                |              +--------+--------+
+                                |              |                 |
+                                |       analyze_staffing()  analyze_inventory()
+                                |              |                 |
+                                +--------------+-----------------+
+                                               |
+                                        build_capstone()
+                                               |
+                                      CapstoneBriefing result
+                                               |
+                                        format_capstone()
 ```
 
-Chapter 2 adds a parallel, deliberately small path:
-
-```text
-data/menu.csv + data/menu_sales_july_2026.csv
-                    ↓
-         CSV loading + validation
-                    ↓
-      Decimal profitability analysis
-                    ↓
-      examples/menu_profitability.py
-```
-
-Chapter 3 extends the same validated, presentation-first system:
-
-```text
-demand history + reservation snapshots + visible rules
-                         ↓
-              validated immutable models
-                         ↓
-        deterministic forecast + explanation
-                         ↓
-           examples/demand_forecast.py
-```
-
-Chapter 4 consumes that forecast rather than rebuilding it:
-
-```text
-Chapter 3 DemandForecast + schedule + visible role assumptions
-                              ↓
-                 labor hours and Decimal cost
-                              ↓
-                  role ranges and signals
-                              ↓
-                examples/labor_planning.py
-```
-
-Chapter 6 adds another validated evidence path:
-
-```text
-fictional reviews + explicit topic/polarity phrases
-                         ↓
-              deterministic classification
-                         ↓
-       topic aggregation + adjacent-window trends
-                         ↓
-             summary + source-text drill-down
-```
+`build_capstone()` is orchestration, not a second calculation path. Chapter 4 and Chapter 5 retain the same `DemandForecast`; the menu opportunity combines Chapter 2's classification with Chapter 5's ingredient coverage; cross-signals use Chapter 6's structured trends. Business logic returns structured immutable results before terminal formatting.
 
 The restaurant itself has a parallel operational flow:
 
@@ -226,6 +183,43 @@ python examples/customer_feedback.py --period-days 7
 
 All review text is original fictional demonstration data. The method uses visible phrases and a documented directional threshold—not external review APIs, scraping, AI, machine learning, or a production sentiment system. A customer signal describes an experience and suggests where to investigate; it does not establish operational root cause.
 
+## Run the Friday Night Capstone
+
+Run the concise default Friday, August 28, 2026 readiness briefing:
+
+```bash
+python examples/friday_night_capstone.py
+```
+
+Trace every conclusion to its structured evidence and management question:
+
+```bash
+python examples/friday_night_capstone.py --explain
+```
+
+Show how one demand assumption propagates through labor, inventory, menu, and customer-experience signals:
+
+```bash
+python examples/friday_night_capstone.py --reservations 210 --event --weather clear
+python examples/friday_night_capstone.py --reservations 120 --weather storms
+```
+
+The capstone calls the Chapters 2–6 analysis functions; it does not copy their formulas. Priorities are categorical and documented, source data is never edited, and connected evidence generates hypotheses rather than automatic operating decisions.
+
+## 45–60 Minute Workshop Path
+
+| Time | Conversation | Executable command |
+|---:|---|---|
+| 5 min | Restaurant and systems | `python examples/restaurant_system.py` |
+| 7 min | Menu profitability | `python examples/menu_profitability.py` |
+| 7 min | Demand forecast | `python examples/demand_forecast.py` |
+| 7 min | Labor planning | `python examples/labor_planning.py` |
+| 7 min | Inventory and waste | `python examples/inventory_waste.py` |
+| 6 min | Customer feedback | `python examples/customer_feedback.py` |
+| 10–12 min | Friday capstone, evidence trace, scenario change, and discussion | `python examples/friday_night_capstone.py --explain` |
+
+The path takes roughly 49–51 minutes before optional audience discussion. The presenter guides in `presentation/` provide prompts rather than a separate slide deck.
+
 ## Run the tests
 
 ```bash
@@ -245,4 +239,13 @@ tests/          Behavior-focused standard-library tests
 presentation/   Concise presenter support (see its README)
 ```
 
-Start with [Chapter 0](chapters/00-introduction.md), continue through [Chapter 1](chapters/01-restaurant-system.md) and [Chapter 2](chapters/02-menu-profitability.md), forecast a busy night in [Chapter 3](chapters/03-demand-forecasting.md), connect that forecast to labor in [Chapter 4](chapters/04-labor-planning.md), trace sales and demand into ingredient and waste consequences in [Chapter 5](chapters/05-inventory-waste.md), then turn guest language into inspectable evidence in [Chapter 6](chapters/06-customer-feedback.md).
+Start with [Chapter 0](chapters/00-introduction.md), continue through [Chapter 1](chapters/01-restaurant-system.md) and [Chapter 2](chapters/02-menu-profitability.md), forecast a busy night in [Chapter 3](chapters/03-demand-forecasting.md), connect that forecast to labor in [Chapter 4](chapters/04-labor-planning.md), trace demand into inventory and waste in [Chapter 5](chapters/05-inventory-waste.md), turn guest language into evidence in [Chapter 6](chapters/06-customer-feedback.md), and combine the signals in [Chapter 7](chapters/07-friday-night-capstone.md).
+
+## Possible Future Experiments
+
+- adapters for real CSV export shapes;
+- a richer but still explainable demand model;
+- an anonymized real-business pilot; or
+- an optional presentation dashboard over the same structured results.
+
+These are possible experiments, not Version 1 features or commitments.
