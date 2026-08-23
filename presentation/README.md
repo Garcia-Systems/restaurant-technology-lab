@@ -34,3 +34,7 @@ Use the dedicated [Chapter 4 presenter guide](chapter-04-presenter-guide.md) for
 ## Chapter 5
 
 Use the dedicated [Chapter 5 presenter guide](chapter-05-presenter-guide.md) for the sales-to-ingredient chain, demand scenarios, waste-cost analysis, and transition to Chapter 6.
+
+## Chapter 6
+
+Use the dedicated [Chapter 6 presenter guide](chapter-06-presenter-guide.md) for inspectable feedback themes, trend-window comparison, symptom-versus-cause discussion, and transition to the planned capstone.

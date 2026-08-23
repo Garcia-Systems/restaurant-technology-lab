@@ -17,7 +17,7 @@ All restaurants, operating details, and business data in this repository are **f
 
 ## Current executable slice
 
-Chapters 0–5 are implemented. The current slice:
+Chapters 0–6 are implemented. The current slice:
 
 - loads one readable JSON configuration for James River Kitchen;
 - validates capacity, service periods, categories, channels, and required data sources;
@@ -27,7 +27,8 @@ Chapters 0–5 are implemented. The current slice:
 - simulates a menu price without changing source data; and
 - forecasts covers and revenue with visible weekday, reservation, event, and weather adjustments and a reasonable range; and
 - compares a fictional Friday schedule with forecast-driven role ranges and transparent labor cost; and
-- connects POS sales, simplified recipes, a physical count, the Chapter 3 forecast, and waste records to ingredient planning signals and financial impact.
+- connects POS sales, simplified recipes, a physical count, the Chapter 3 forecast, and waste records to ingredient planning signals and financial impact; and
+- turns fictional guest feedback into inspectable topic, polarity, and time-window signals with deterministic phrase rules.
 
 It intentionally contains no automated management decisions, external integrations, payments, authentication, machine learning, or web dashboard.
 
@@ -39,9 +40,9 @@ It intentionally contains no automated management decisions, external integratio
 - Demand forecasting
 - Labor planning
 - Inventory and food waste
+- Customer feedback
 
 ## Planned
-- Customer feedback
 - Friday Night Capstone
 
 Planned chapters name future business questions; they are not placeholder features.
@@ -94,6 +95,18 @@ Chapter 3 DemandForecast + schedule + visible role assumptions
                   role ranges and signals
                               ↓
                 examples/labor_planning.py
+```
+
+Chapter 6 adds another validated evidence path:
+
+```text
+fictional reviews + explicit topic/polarity phrases
+                         ↓
+              deterministic classification
+                         ↓
+       topic aggregation + adjacent-window trends
+                         ↓
+             summary + source-text drill-down
 ```
 
 The restaurant itself has a parallel operational flow:
@@ -189,13 +202,37 @@ python examples/inventory_waste.py --ingredient-cost rockfish-fillet=12.00
 
 These menu-mix, recipe, count, 10% buffer, cost, and waste assumptions are fictional. Results are planning signals—not guaranteed requirements, automated purchasing, or purchase orders. Chapter 5 consumes Chapter 3's forecast and reconciles recipe-derived costs with Chapter 2.
 
+## Run the customer-feedback analysis
+
+Run the default comparison of two adjacent 30-day windows:
+
+```bash
+python examples/customer_feedback.py
+```
+
+Trace the wait-time or online-ordering summary to the original fictional evidence:
+
+```bash
+python examples/customer_feedback.py --topic wait_time
+python examples/customer_feedback.py --topic online_ordering
+```
+
+Compare shorter aggregation windows without changing source data:
+
+```bash
+python examples/customer_feedback.py --period-days 14
+python examples/customer_feedback.py --period-days 7
+```
+
+All review text is original fictional demonstration data. The method uses visible phrases and a documented directional threshold—not external review APIs, scraping, AI, machine learning, or a production sentiment system. A customer signal describes an experience and suggests where to investigate; it does not establish operational root cause.
+
 ## Run the tests
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-The tests use only the Python standard library and cover the system foundation, menu profitability, demand forecasting, schedule and assumption loading, shift hours, Decimal labor cost, staffing ranges, immutable scenarios, validation, and executable output.
+The tests use only the Python standard library and cover the system foundation, menu profitability, demand forecasting, labor, inventory and waste, feedback loading and validation, deterministic classification, mixed topics, aggregation, trend windows, non-mutating scenarios, and executable output.
 
 ## Repository map
 
@@ -208,4 +245,4 @@ tests/          Behavior-focused standard-library tests
 presentation/   Concise presenter support (see its README)
 ```
 
-Start with [Chapter 0](chapters/00-introduction.md), continue through [Chapter 1](chapters/01-restaurant-system.md) and [Chapter 2](chapters/02-menu-profitability.md), forecast a busy night in [Chapter 3](chapters/03-demand-forecasting.md), connect that forecast to labor in [Chapter 4](chapters/04-labor-planning.md), then trace sales and demand into ingredient and waste consequences in [Chapter 5](chapters/05-inventory-waste.md).
+Start with [Chapter 0](chapters/00-introduction.md), continue through [Chapter 1](chapters/01-restaurant-system.md) and [Chapter 2](chapters/02-menu-profitability.md), forecast a busy night in [Chapter 3](chapters/03-demand-forecasting.md), connect that forecast to labor in [Chapter 4](chapters/04-labor-planning.md), trace sales and demand into ingredient and waste consequences in [Chapter 5](chapters/05-inventory-waste.md), then turn guest language into inspectable evidence in [Chapter 6](chapters/06-customer-feedback.md).
