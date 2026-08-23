@@ -19,7 +19,7 @@ This project is not a new POS, reservation platform, scheduling tool, inventory 
 1. imported through clear boundaries;
 2. normalized into shared restaurant concepts;
 3. analyzed with understandable business rules; and
-4. turned into a recommendation or alert.
+4. turned into a planning signal or management question.
 
 The useful problem often lives **between** systems: reservations may predict covers, scheduling holds planned labor, and POS sales reveal the result. No single screen necessarily tells the whole story.
 

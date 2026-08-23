@@ -2,7 +2,10 @@
 
 This directory holds concise presenter support for executable chapters. No separate slide deck is needed; the terminal output and chapter prompts are the presentation aids.
 
-The workshop finale is documented in [the Chapter 7 presenter guide](chapter-07-presenter-guide.md), including its scenario comparison, causal caveat, and operator-discovery close.
+Use the authoritative [workshop guide](workshop-guide.md) for the 45–60 minute, 15-minute, and
+five-minute paths, and the printable [workshop cheat sheet](workshop-cheat-sheet.md) at the podium.
+The [readiness audit](readiness-audit.md) records the presentation friction found before changes.
+Chapter-specific guides remain supporting detail.
 
 ## Chapter 2 live-demo sequence
 
@@ -39,4 +42,4 @@ Use the dedicated [Chapter 5 presenter guide](chapter-05-presenter-guide.md) for
 
 ## Chapter 6
 
-Use the dedicated [Chapter 6 presenter guide](chapter-06-presenter-guide.md) for inspectable feedback themes, trend-window comparison, symptom-versus-cause discussion, and transition to the planned capstone.
+Use the dedicated [Chapter 6 presenter guide](chapter-06-presenter-guide.md) for inspectable feedback themes, trend-window comparison, symptom-versus-cause discussion, and transition to the capstone.

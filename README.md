@@ -2,7 +2,7 @@
 
 **Restaurant Technology Lab** is a compact, presentation-first Python simulation about getting more business value from restaurant data. Its fictional business, **James River Kitchen**, is an independent Williamsburg, Virginia restaurant serving seasonal Virginia comfort food.
 
-> Keep the systems you already use. This lab demonstrates what becomes possible when their data is connected, normalized, analyzed, and turned into business decisions.
+> Keep the systems you already use. This lab demonstrates what becomes possible when their data is connected, normalized, analyzed, and turned into useful business questions.
 
 The lab complements POS, reservation, scheduling, inventory, and review software; it does **not** attempt to replace those products. It gives restaurant operators and technical audiences a shared, executable way to discuss the questions that fall between them.
 
@@ -14,6 +14,41 @@ The lab complements POS, reservation, scheduling, inventory, and review software
 - Developers learning to connect implementation choices to business evidence
 
 All restaurants, operating details, and business data in this repository are **fictional**. James River Kitchen is not a real restaurant.
+
+## Quick Start
+
+Requires Python 3.10 or newer and no third-party runtime packages. From a fresh clone:
+
+```bash
+git clone <repository-url>
+cd restaurant-technology-lab
+python examples/demo_check.py
+python examples/friday_night_capstone.py
+python examples/workshop.py
+```
+
+The examples locate `src/` and `data/` from their own files, so no editable install,
+`PYTHONPATH`, network connection, or external service is required. Use
+`python examples/workshop.py --no-pause` for an uninterrupted rehearsal.
+
+## For Restaurant and Hospitality Professionals
+
+Start with the capstone or guided workshop. The terminal output follows a fictional Friday from
+sales and reservations through labor, inventory, and guest feedback. Every result is a planning
+signal or question: it does not prescribe staffing, purchasing, pricing, or service decisions.
+
+## For Technical Readers
+
+The project uses standard-library Python, immutable domain models, explicit CSV/JSON validation,
+deterministic and testable business rules, and a modular analysis pipeline. Chapter functions
+return structured results; formatters render them; the capstone and workshop orchestrate those
+existing paths rather than copying formulas.
+
+## What this lab is not
+
+It is not a POS replacement, employee-scheduling product, inventory platform, accounting system,
+production forecasting engine, or AI restaurant manager. It is an executable demonstration of
+how existing operational data can be connected to support better business questions.
 
 ## Version 1 — complete
 
@@ -62,6 +97,22 @@ It intentionally contains no automated management decisions, external integratio
                                       CapstoneBriefing result
                                                |
                                         format_capstone()
+```
+
+In business terms:
+
+```text
+POS / Sales ----------------------┐
+Reservations → Demand Forecast ---┤
+Labor Schedule -------------------┤
+Recipes / Inventory --------------┤
+Customer Feedback ----------------┤
+                                  ↓
+                         Business Analysis
+                                  ↓
+                       Friday Night Briefing
+                                  ↓
+                      Management Conversation
 ```
 
 `build_capstone()` is orchestration, not a second calculation path. Chapter 4 and Chapter 5 retain the same `DemandForecast`; the menu opportunity combines Chapter 2's classification with Chapter 5's ingredient coverage; cross-signals use Chapter 6's structured trends. Business logic returns structured immutable results before terminal formatting.
@@ -208,6 +259,14 @@ The capstone calls the Chapters 2–6 analysis functions; it does not copy their
 
 ## 45–60 Minute Workshop Path
 
+The authoritative guide is [`presentation/workshop-guide.md`](presentation/workshop-guide.md),
+with a printable [`workshop-cheat-sheet.md`](presentation/workshop-cheat-sheet.md). The primary
+command is:
+
+```bash
+python examples/workshop.py
+```
+
 | Time | Conversation | Executable command |
 |---:|---|---|
 | 5 min | Restaurant and systems | `python examples/restaurant_system.py` |
@@ -219,6 +278,9 @@ The capstone calls the Chapters 2–6 analysis functions; it does not copy their
 | 10–12 min | Friday capstone, evidence trace, scenario change, and discussion | `python examples/friday_night_capstone.py --explain` |
 
 The path takes roughly 49–51 minutes before optional audience discussion. The presenter guides in `presentation/` provide prompts rather than a separate slide deck.
+
+The same guide documents a 15-minute path and a five-minute elevator demo using existing commands;
+neither introduces separate code or business logic.
 
 ## Run the tests
 
