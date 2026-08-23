@@ -1,0 +1,10 @@
+{
+  "label": "James River Kitchen planning assumptions",
+  "roles": [
+    {"role": "host", "covers_per_employee": 160, "minimum_staff": 2},
+    {"role": "server", "covers_per_employee": 32, "minimum_staff": 2},
+    {"role": "bartender", "covers_per_employee": 110, "minimum_staff": 2},
+    {"role": "cook", "covers_per_employee": 45, "minimum_staff": 2},
+    {"role": "support", "covers_per_employee": 75, "minimum_staff": 2}
+  ]
+}
