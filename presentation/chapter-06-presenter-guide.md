@@ -31,4 +31,4 @@ Use the chapter's operator questions to learn how feedback arrives, what gets mi
 
 > **What happens when all of these signals appear on the same Friday night?**
 
-That is the next planned chapter. Do not imply an implemented capstone yet.
+That is the completed Friday Night Capstone. Keep its reveal for the next section.
