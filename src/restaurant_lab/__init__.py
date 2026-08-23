@@ -17,6 +17,13 @@ from .labor import (LABOR_ROLES, RolePlanningAssumption, RoleStaffingAlignment,
 from .labor_loader import load_labor_assumptions, load_schedule
 from .labor_planning import analyze_staffing
 from .labor_summary import format_staffing_analysis, format_staffing_comparison
+from .inventory import (SUPPORTED_UNITS, WASTE_REASONS, Ingredient, IngredientCoverage,
+                        InventoryAnalysis, InventoryCount, RecipeComponent, WasteEvent,
+                        validate_recipe_costs)
+from .inventory_loader import load_ingredients, load_inventory, load_recipes, load_waste
+from .inventory_planning import (analyze_inventory, calculate_menu_mix, expected_ingredient_demand,
+                                 historical_ingredient_usage, simulate_ingredient_cost)
+from .inventory_summary import format_inventory_analysis, format_inventory_comparison
 
 __all__ = [
     "DataSource",
@@ -58,4 +65,10 @@ __all__ = [
     "format_staffing_comparison",
     "load_labor_assumptions",
     "load_schedule",
+    "SUPPORTED_UNITS", "WASTE_REASONS", "Ingredient", "IngredientCoverage",
+    "InventoryAnalysis", "InventoryCount", "RecipeComponent", "WasteEvent",
+    "validate_recipe_costs", "load_ingredients", "load_inventory", "load_recipes", "load_waste",
+    "analyze_inventory", "calculate_menu_mix", "expected_ingredient_demand",
+    "historical_ingredient_usage", "simulate_ingredient_cost", "format_inventory_analysis",
+    "format_inventory_comparison",
 ]

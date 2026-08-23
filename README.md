@@ -17,7 +17,7 @@ All restaurants, operating details, and business data in this repository are **f
 
 ## Current executable slice
 
-Chapters 0–4 are implemented. The current slice:
+Chapters 0–5 are implemented. The current slice:
 
 - loads one readable JSON configuration for James River Kitchen;
 - validates capacity, service periods, categories, channels, and required data sources;
@@ -26,7 +26,8 @@ Chapters 0–4 are implemented. The current slice:
 - analyzes fictional July 2026 menu sales with exact decimal contribution calculations; and
 - simulates a menu price without changing source data; and
 - forecasts covers and revenue with visible weekday, reservation, event, and weather adjustments and a reasonable range; and
-- compares a fictional Friday schedule with forecast-driven role ranges and transparent labor cost.
+- compares a fictional Friday schedule with forecast-driven role ranges and transparent labor cost; and
+- connects POS sales, simplified recipes, a physical count, the Chapter 3 forecast, and waste records to ingredient planning signals and financial impact.
 
 It intentionally contains no automated management decisions, external integrations, payments, authentication, machine learning, or web dashboard.
 
@@ -37,10 +38,9 @@ It intentionally contains no automated management decisions, external integratio
 - Menu profitability analysis
 - Demand forecasting
 - Labor planning
+- Inventory and food waste
 
 ## Planned
-
-- Inventory and food waste
 - Customer feedback
 - Friday Night Capstone
 
@@ -178,6 +178,17 @@ python examples/labor_planning.py --event --reservations 210
 
 These are fictional James River Kitchen assumptions, not industry standards. The result is a planning signal—not automatic scheduling, payroll, compliance, or a personnel recommendation.
 
+## Run the inventory and food-waste analysis
+
+```bash
+python examples/inventory_waste.py
+python examples/inventory_waste.py --weather rain --reservations 100
+python examples/inventory_waste.py --event --reservations 210
+python examples/inventory_waste.py --ingredient-cost rockfish-fillet=12.00
+```
+
+These menu-mix, recipe, count, 10% buffer, cost, and waste assumptions are fictional. Results are planning signals—not guaranteed requirements, automated purchasing, or purchase orders. Chapter 5 consumes Chapter 3's forecast and reconciles recipe-derived costs with Chapter 2.
+
 ## Run the tests
 
 ```bash
@@ -197,4 +208,4 @@ tests/          Behavior-focused standard-library tests
 presentation/   Concise presenter support (see its README)
 ```
 
-Start with [Chapter 0](chapters/00-introduction.md), continue through [Chapter 1](chapters/01-restaurant-system.md) and [Chapter 2](chapters/02-menu-profitability.md), forecast a busy night in [Chapter 3](chapters/03-demand-forecasting.md), then connect that forecast to labor in [Chapter 4](chapters/04-labor-planning.md).
+Start with [Chapter 0](chapters/00-introduction.md), continue through [Chapter 1](chapters/01-restaurant-system.md) and [Chapter 2](chapters/02-menu-profitability.md), forecast a busy night in [Chapter 3](chapters/03-demand-forecasting.md), connect that forecast to labor in [Chapter 4](chapters/04-labor-planning.md), then trace sales and demand into ingredient and waste consequences in [Chapter 5](chapters/05-inventory-waste.md).

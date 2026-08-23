@@ -30,3 +30,7 @@ Close without answering the bridge to the next chapter: **If we expect about 290
 ## Chapter 4
 
 Use the dedicated [Chapter 4 presenter guide](chapter-04-presenter-guide.md) for the fixed-schedule forecast comparison and transition to Chapter 5.
+
+## Chapter 5
+
+Use the dedicated [Chapter 5 presenter guide](chapter-05-presenter-guide.md) for the sales-to-ingredient chain, demand scenarios, waste-cost analysis, and transition to Chapter 6.
