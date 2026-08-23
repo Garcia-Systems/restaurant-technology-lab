@@ -1,0 +1,49 @@
+review_id,date,rating,channel,text
+FB-001,2026-07-02,5,public_review,The food was excellent and our friendly server made dinner special.
+FB-002,2026-07-03,4,reservation_survey,"Great crab cakes and lovely atmosphere, although parking was difficult."
+FB-003,2026-07-04,3,website_feedback,"We waited for a table, but the meal was delicious."
+FB-004,2026-07-05,2,takeout_survey,The online order was missing a side and the pickup time was confusing.
+FB-005,2026-07-06,5,public_review,Perfectly cooked rockfish with attentive service.
+FB-006,2026-07-08,4,reservation_survey,Creative cocktails and friendly staff; the dining room was too noisy.
+FB-007,2026-07-09,5,website_feedback,Easy online order and smooth pickup.
+FB-008,2026-07-10,4,public_review,Delicious burger and good value.
+FB-009,2026-07-11,5,reservation_survey,"Excellent food, warm service, and a clean dining room."
+FB-010,2026-07-12,3,public_review,"The bar was slow, though the great cocktails were worth the wait."
+FB-011,2026-07-13,2,takeout_survey,The ordering site failed and our takeout order had the wrong pickup time.
+FB-012,2026-07-15,5,public_review,Fresh crab cakes and a helpful host.
+FB-013,2026-07-16,4,reservation_survey,Great atmosphere and fair price for a delicious meal.
+FB-014,2026-07-17,4,website_feedback,"Parking was difficult, but service was attentive."
+FB-015,2026-07-18,5,public_review,"Great meal, creative cocktails, and very clean tables."
+FB-016,2026-07-19,3,reservation_survey,"A long wait at the door, then a friendly server."
+FB-017,2026-07-20,4,takeout_survey,Online ordering worked well and the food was fresh.
+FB-018,2026-07-22,5,public_review,Excellent cocktails arrived quickly and the crab cakes were delicious.
+FB-019,2026-07-23,4,reservation_survey,Comfortable dining room and attentive staff.
+FB-020,2026-07-24,2,website_feedback,"The online order was missing an entree, but the staff was helpful."
+FB-021,2026-07-25,5,public_review,"Great crab cakes, friendly staff, and easy parking."
+FB-022,2026-07-27,4,reservation_survey,The food was excellent but the music was loud.
+FB-023,2026-07-29,5,takeout_survey,"Easy online order, ready on time, and delicious food."
+FB-024,2026-07-30,4,public_review,Great meal and warm service; the wait wasn't bad.
+FB-025,2026-08-01,4,public_review,"The food was excellent, but we waited 30 minutes for our table."
+FB-026,2026-08-02,5,reservation_survey,Delicious rockfish and a friendly server.
+FB-027,2026-08-03,3,website_feedback,"Great cocktails, but drinks took too long."
+FB-028,2026-08-05,3,public_review,"Food was excellent, but we waited almost 40 minutes."
+FB-029,2026-08-06,4,takeout_survey,Online ordering worked well and pickup was smooth.
+FB-030,2026-08-07,2,reservation_survey,A long wait and slow drinks overshadowed the delicious meal.
+FB-031,2026-08-08,5,public_review,Great crab cakes and attentive service.
+FB-032,2026-08-09,4,website_feedback,"Parking was easy, and the atmosphere was lovely."
+FB-033,2026-08-10,3,reservation_survey,Our friendly server apologized because the kitchen was slow.
+FB-034,2026-08-12,2,public_review,Our reservation was on time but our entrees took forever.
+FB-035,2026-08-13,5,takeout_survey,"Easy online order, ready on time, and fresh food."
+FB-036,2026-08-14,4,public_review,Creative cocktails and delicious crab cakes.
+FB-037,2026-08-15,3,reservation_survey,"The late seating was frustrating, though service was attentive."
+FB-038,2026-08-16,4,website_feedback,"Great meal, but the loud dining room made conversation hard."
+FB-039,2026-08-18,4,public_review,Great meal once it arrived; the kitchen seemed slow.
+FB-040,2026-08-19,2,reservation_survey,"We waited, then our drinks took too long."
+FB-041,2026-08-20,5,public_review,"Excellent food, friendly staff, and excellent cocktails."
+FB-042,2026-08-21,3,website_feedback,"Hard to park, and there was a long wait at the host stand."
+FB-043,2026-08-22,4,takeout_survey,Smooth pickup and delicious food.
+FB-044,2026-08-24,2,public_review,The food was cold after a long wait.
+FB-045,2026-08-25,5,reservation_survey,Perfectly cooked rockfish with warm service.
+FB-046,2026-08-27,3,public_review,"The bar was slow, but our server was friendly."
+FB-047,2026-08-29,4,website_feedback,"Delicious meal and good value, despite slow service."
+FB-048,2026-08-30,2,reservation_survey,We waited for our reservation and the drinks took too long.
