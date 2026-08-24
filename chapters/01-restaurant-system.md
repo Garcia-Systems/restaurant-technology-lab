@@ -1,5 +1,7 @@
 # The Restaurant as a System
 
+![Chapter 1 — The Restaurant as a System](../images/chapters/1.png)
+
 A restaurant is both a flow of hospitality work and a collection of software boundaries. James River Kitchen's executable model gives us one shared picture of both.
 
 ## Business question

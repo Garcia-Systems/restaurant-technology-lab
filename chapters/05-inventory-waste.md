@@ -1,5 +1,7 @@
 # Chapter 5 — Inventory and Food Waste
 
+![Chapter 5 — Inventory and Food Waste](../images/chapters/5.png)
+
 Every ingredient, simplified recipe, count, cost, and waste event is **fictional**. This is explainable decision support—not a production inventory system or an industry standard.
 
 ### Business question
