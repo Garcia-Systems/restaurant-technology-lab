@@ -1,5 +1,7 @@
 # Chapter 6 — What Customers Are Telling You
 
+![Chapter 6 — What Customers Are Telling You](../images/chapters/6.png)
+
 Every review, rating, channel, and date in this chapter is **fictional**. The method is deterministic phrase matching—not AI, machine learning, or a production sentiment system.
 
 ### Business question

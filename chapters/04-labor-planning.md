@@ -1,5 +1,7 @@
 # Chapter 4 — Labor vs. Demand
 
+![Chapter 4 — Labor vs. Demand](../images/chapters/4.png)
+
 Every employee identifier, shift, wage, assumption, and forecast here is **fictional**. This is decision support—not a production scheduler, payroll tool, or source of personnel directives.
 
 ### Business question

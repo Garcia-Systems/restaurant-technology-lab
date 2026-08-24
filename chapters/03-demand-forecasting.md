@@ -1,5 +1,7 @@
 # Chapter 3 — Predicting a Busy Night
 
+![Chapter 3 — Predicting a Busy Night](../images/chapters/3.png)
+
 Every date, booking, cover count, event, weather label, and dollar amount in this chapter is **fictional**. A **cover** means one guest served; 20 parties of two represent 40 covers.
 
 ### Business question

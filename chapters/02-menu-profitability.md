@@ -1,5 +1,7 @@
 # Chapter 2 — What Actually Makes Money?
 
+![Chapter 2 — What Actually Makes Money?](../images/chapters/2.png)
+
 Every restaurant, menu item, sale, and cost in this lab is fictional. “Contribution” here means selling price minus estimated ingredient cost—not accounting profit—and excludes labor, occupancy, tax, and other expenses.
 
 ### Business question

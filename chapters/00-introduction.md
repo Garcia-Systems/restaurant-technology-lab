@@ -1,5 +1,7 @@
 # Introduction — Meet James River Kitchen
 
+![Chapter 0 — Meet James River Kitchen](../images/chapters/0.png)
+
 ## Why this lab exists
 
 A restaurant can have a POS report, a reservation book, a labor schedule, an inventory count, and hundreds of reviews—and still struggle to answer a question that crosses two of them.

@@ -1,5 +1,7 @@
 # Chapter 7 — Friday Night at James River Kitchen
 
+![Chapter 7 — Friday Night at James River Kitchen](../images/chapters/7.png)
+
 ### 3:00 PM — The Question
 
 It is Friday, August 28, 2026. Tonight is expected to be busy. Reservations, weather, the local-event flag, the unchanged labor schedule, the physical inventory count, recent waste, July menu sales, and recent fictional reviews are available—but they live in different evidence paths.
